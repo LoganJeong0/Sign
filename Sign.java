@@ -19,19 +19,17 @@ public class Sign
 
         }
 
-        public int getLines(){
+        public String getLines(){
             String newStr = "";
-            int findLast = 0;
-            for (int i = 0; i <= length; i += length){
-                if (findLast - 1 == numberOfLines()){
+            for (int i = 0; i < message.length(); i += length){
+                if (i + length > message.length() - 1){
                     newStr += message.substring(i);
                 }
                 else{
-                    newStr += message.substring(i, i + length);
+                    newStr += message.substring(i, i+length);
                     newStr += ";";
-                    findLast++;
                 }
-            }
-            return findLast;
+            }      
+            return newStr;
         }
-} 
+}
